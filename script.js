@@ -1,31 +1,56 @@
-document.querySelectorAll('.tab-link').forEach(button => {
-  button.addEventListener('click', () => {
-    document.querySelectorAll('.tab-link').forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
-
-    const tabId = button.getAttribute('data-tab');
-    document.querySelectorAll('.tutorial-content').forEach(tab => {
-      tab.classList.remove('active');
+document.addEventListener('DOMContentLoaded', () => {
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
     });
-    document.getElementById(tabId).classList.add('active');
-  });
-});
 
-document.querySelectorAll('.faq-question').forEach(button => {
-  button.addEventListener('click', () => {
-    const faqItem = button.parentElement;
-    faqItem.classList.toggle('open');
-  });
-});
+    // Smooth scrolling
+    document.querySelectorAll('a.nav-link[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
 
-document.getElementById('copy-script-button')?.addEventListener('click', async () => {
-  try {
-    const response = await fetch('https://raw.githubusercontent.com/veriepicc/Serenity-Bloxd/main/dist/Serenity.js');
-    const script = await response.text();
-    await navigator.clipboard.writeText(script);
-    alert('Script copied to clipboard!');
-  } catch (err) {
-    console.error('Copy failed:', err);
-    alert('Failed to copy script.');
-  }
+    // FAQ Accordion
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+
+            // Close all other items
+            faqItems.forEach(i => i.classList.remove('active'));
+
+            // Toggle this item
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        });
+    });
+
+    // Fade-in animations on scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -100px 0px"
+    };
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+    });
 });
