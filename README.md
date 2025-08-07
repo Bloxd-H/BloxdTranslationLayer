@@ -1,2 +1,4 @@
-# bloxdtranslayer
-translate tool for play bloxd with minecraft 1.8.9 packets.
+# Bloxd Translation Layer
+Translate tool for play Bloxd with Minecraft 1.8.9 packets.
+# Recommended Website
+https://bloxd-h.github.io/bloxdtranslayer
