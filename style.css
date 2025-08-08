@@ -267,20 +267,26 @@ nav {
   display: block;
 }
 
-.youtube-embed {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.youtube-embed-text {
   text-align: center;
-  gap: 12px;
+  color: var(--text);
   max-width: 700px;
-  margin: 0 auto;
+  margin: 30px auto 20px;
+  font-family: 'Inter', sans-serif;
 }
 
-.youtube-embed h3,
-.youtube-embed p {
+.youtube-embed-text h3 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.youtube-embed-text p {
+  font-size: 16px;
+  color: var(--text-secondary);
   margin: 0;
 }
+
 
 .video-container {
   width: 100%;
