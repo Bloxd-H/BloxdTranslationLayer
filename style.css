@@ -645,24 +645,33 @@ footer {
 }
 
 .logo-button {
-  font-size: 26px;
+  font-family: 'Inter', sans-serif; /* Serenityで使ってるフォント */
   font-weight: 800;
+  font-size: 26px;
   color: var(--text);
-  text-shadow: 0 0 15px rgba(233, 78, 78, 0.8);
+  text-shadow: 0 0 12px rgba(233, 78, 78, 0.6);
   text-decoration: none;
   cursor: pointer;
   user-select: none;
-  display: inline-block;
   padding: 4px 12px;
   border-radius: var(--radius);
   transition: var(--transition);
   background: var(--panel-transparent);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
+  display: inline-block;
+  position: relative;
+  /* 光らせる準備 */
+  box-shadow: 0 0 10px rgba(233, 78, 78, 0.4);
 }
 
-.logo-button:hover {
+.logo-button:hover,
+.logo-button:focus {
   color: var(--primary);
   background: var(--panel);
-  box-shadow: 0 0 15px var(--primary);
+  box-shadow:
+    0 0 20px var(--primary),
+    0 0 40px var(--primary),
+    0 0 60px var(--primary);
+  outline: none;
 }
