@@ -644,13 +644,12 @@ footer {
   cursor: pointer;
   user-select: none;
   padding: 4px 12px;
-  border-radius: var(--radius);
   transition: var(--transition);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   display: inline-block;
   position: relative;
-  box-shadow: none; /* 影はなし */
+  box-shadow: none;
   border: none;
   outline: none;
 }
@@ -662,7 +661,6 @@ footer {
     0 0 10px rgba(233, 78, 78, 1),
     0 0 20px rgba(233, 78, 78, 0.7),
     0 0 30px rgba(233, 78, 78, 0.5);
-  background: var(--panel-transparent);
   box-shadow: none;
   border: none;
   outline: none;
