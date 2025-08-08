@@ -688,3 +688,40 @@ footer {
   outline: none !important;
 }
 
+.cmd-box {
+  margin-top: 10px;
+  background-color: #2b0a0a;
+  border: 1px solid rgba(233, 78, 78, 0.6);
+  border-radius: 8px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  font-family: 'Courier New', Courier, monospace;
+  color: #ff6666;
+  box-shadow: 0 0 8px rgba(233, 78, 78, 0.7);
+}
+
+.cmd-box code {
+  flex-grow: 1;
+  user-select: text;
+  font-size: 16px;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.btn-copy {
+  margin-left: 16px;
+  background-color: var(--primary);
+  border: none;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+.btn-copy:hover {
+  background-color: var(--primary-dark);
+}
