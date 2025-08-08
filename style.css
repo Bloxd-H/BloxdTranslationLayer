@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 :root {
-  --primary: #E94E4E;       /* 鮮やかな赤 */
-  --primary-dark: #B03535;  /* 濃い赤 */
-  --background: #2B0A0A;    /* 深い赤黒 */
-  --panel: #4A1F1F;         /* 赤系パネル */
+  --primary: #E94E4E;
+  --primary-dark: #B03535;
+  --background: #2B0A0A;
+  --panel: #4A1F1F;
   --panel-transparent: rgba(74, 31, 31, 0.7);
   --border: rgba(255, 255, 255, 0.12);
   --text: #FFFFFF;          
@@ -32,7 +32,6 @@ body {
   position: relative;
 }
 
-/* 背景の赤いぼかし光 */
 body::before, body::after {
   content: '';
   position: fixed;
@@ -74,7 +73,6 @@ body::after {
   to { transform: translate(-20%, -20%) rotate(-90deg); }
 }
 
-/* スクロールバー */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -95,7 +93,6 @@ body::after {
   margin: 0 auto;
 }
 
-/* --- Navbar --- */
 .navbar {
   background-color: rgba(43, 10, 10, 0.7);
   backdrop-filter: blur(12px);
@@ -144,7 +141,6 @@ nav {
   color: var(--primary);
 }
 
-/* --- Hero Section --- */
 .hero {
   padding: 200px 0 160px;
   text-align: center;
@@ -224,12 +220,10 @@ nav {
   transform: rotate(-5deg) scale(1.1);
 }
 
-/* Remove old hero background */
 .hero::before, .hero::after {
   display: none;
 }
 
-/* --- Tutorial Section --- */
 .tutorial-section {
   padding: 100px 0;
   background-color: var(--background);
@@ -276,11 +270,11 @@ nav {
 .youtube-embed {
   display: flex;
   flex-direction: column;
-  align-items: center;  /* 横方向中央揃え */
-  text-align: center;   /* テキストも中央揃え */
-  gap: 12px;            /* 項目間の余白 */
-  max-width: 700px;     /* 埋め込み動画などの最大幅調整 */
-  margin: 0 auto;       /* コンテナ全体を中央に配置 */
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .youtube-embed h3,
@@ -290,7 +284,7 @@ nav {
 
 .video-container {
   width: 100%;
-  max-width: 700px;    /* 動画の最大幅 */
+  max-width: 700px;
   aspect-ratio: 16 / 9;
   overflow: hidden;
   border-radius: 12px;
@@ -366,7 +360,6 @@ nav {
   color: var(--primary);
 }
 
-/* --- Features Section --- */
 .features-section {
   padding: 100px 0;
   position: relative;
@@ -443,7 +436,6 @@ nav {
   color: var(--text-secondary);
 }
 
-/* --- Community Section --- */
 .community-section {
   padding: 100px 0;
   text-align: center;
@@ -477,7 +469,6 @@ nav {
   border-color: var(--text-secondary);
 }
 
-/* --- Docs Section --- */
 .docs-section {
   padding: 100px 0;
   background-color: #3c1414;
@@ -544,7 +535,6 @@ nav {
   font-size: 0.9em;
 }
 
-/* --- FAQ Section --- */
 .faq-section {
   padding: 100px 0;
 }
@@ -603,7 +593,6 @@ nav {
   padding-bottom: 20px;
 }
 
-/* --- Footer --- */
 footer {
   text-align: center;
   padding: 50px 0;
@@ -612,7 +601,6 @@ footer {
   font-size: 14px;
 }
 
-/* --- Scroll Animations --- */
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
