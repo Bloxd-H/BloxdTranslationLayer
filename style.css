@@ -637,7 +637,9 @@ footer {
   font-weight: 800;
   font-size: 26px;
   color: var(--text);
-  text-shadow: 0 0 8px rgba(233, 78, 78, 0.4);
+  text-shadow:
+    0 0 6px rgba(233, 78, 78, 0.5),
+    0 0 12px rgba(233, 78, 78, 0.3);
   text-decoration: none;
   cursor: pointer;
   user-select: none;
@@ -649,7 +651,7 @@ footer {
   -webkit-backdrop-filter: blur(6px);
   display: inline-block;
   position: relative;
-  box-shadow: 0 0 6px rgba(233, 78, 78, 0.2);
+  box-shadow: none; /* 影はなし */
   border: none;
   outline: none;
 }
@@ -657,10 +659,12 @@ footer {
 .logo-button:hover,
 .logo-button:focus {
   color: var(--primary);
-  background: rgba(233, 78, 78, 0.1);
-  box-shadow:
-    0 0 12px rgba(233, 78, 78, 0.4),
-    0 0 24px rgba(233, 78, 78, 0.2);
+  text-shadow:
+    0 0 10px rgba(233, 78, 78, 1),
+    0 0 20px rgba(233, 78, 78, 0.7),
+    0 0 30px rgba(233, 78, 78, 0.5);
+  background: var(--panel-transparent);
+  box-shadow: none;
   border: none;
   outline: none;
   -webkit-tap-highlight-color: transparent;
@@ -669,3 +673,4 @@ footer {
 *:focus {
   outline: none !important;
 }
+
