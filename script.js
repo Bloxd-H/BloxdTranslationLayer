@@ -54,10 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 function copyCmd() {
-  const cmdText = document.getElementById('cmd-text').textContent;
-  navigator.clipboard.writeText(cmdText).then(() => {
-    alert('Copied to clipboard!');
+  const textToCopy = `npm install
+node index.js`;
+  navigator.clipboard.writeText(textToCopy).then(() => {
+    alert('Commands copied to clipboard!');
   }).catch(() => {
-    alert('Failed to copy.');
+    alert('Failed to copy commands.');
   });
 }
