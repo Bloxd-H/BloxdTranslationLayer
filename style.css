@@ -727,3 +727,19 @@ footer {
 .btn-copy:hover {
   background-color: #009900;
 }
+
+.notice-bar {
+  background-color: #FFD700;
+  color: #000;
+  text-align: center;
+  padding: 6px 10px;
+  font-size: 14px;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.notice-bar.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
