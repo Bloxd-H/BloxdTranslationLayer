@@ -53,3 +53,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+function copyCmd() {
+  const cmdText = document.getElementById('cmd-text').textContent;
+  navigator.clipboard.writeText(cmdText).then(() => {
+    alert('Copied to clipboard!');
+  }).catch(() => {
+    alert('Failed to copy.');
+  });
+}
