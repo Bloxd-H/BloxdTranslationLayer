@@ -622,63 +622,56 @@ footer {
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+  
 }
 
+.tutorial-intro {
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+  color: var(--text-secondary);
+  font-size: 18px;
+  text-align: center;
+}
 
-=== script.js ===
-document.addEventListener('DOMContentLoaded', () => {
-    // Navbar scroll effect
-    const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
+.tutorial-steps {
+  max-width: 700px;
+  margin: 0 auto;
+  list-style-type: decimal;
+  padding-left: 20px;
+  color: var(--text-secondary);
+}
 
-    // Smooth scrolling
-    document.querySelectorAll('a.nav-link[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
+.tutorial-steps li {
+  margin-bottom: 25px;
+}
 
-    // FAQ Accordion
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        question.addEventListener('click', () => {
-            const isActive = item.classList.contains('active');
+.tutorial-steps h3 {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 8px;
+}
 
-            // Close all other items
-            faqItems.forEach(i => i.classList.remove('active'));
+.tutorial-steps p {
+  line-height: 1.6;
+}
 
-            // Toggle this item
-            if (!isActive) {
-                item.classList.add('active');
-            }
-        });
-    });
+/* YouTube動画レスポンシブ対応 */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-    // Fade-in animations on scroll
-    const faders = document.querySelectorAll('.fade-in');
-    const appearOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -100px 0px"
-    };
-    const appearOnScroll = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) return;
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-        });
-    }, appearOptions);
-
-    faders.forEach(fader => {
-        appearOnScroll.observe(fader);
-    });
-});
+.video-container iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: var(--radius);
+}
