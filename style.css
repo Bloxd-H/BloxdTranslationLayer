@@ -273,6 +273,38 @@ nav {
   display: block;
 }
 
+.youtube-embed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* 横方向中央揃え */
+  text-align: center;   /* テキストも中央揃え */
+  gap: 12px;            /* 項目間の余白 */
+  max-width: 700px;     /* 埋め込み動画などの最大幅調整 */
+  margin: 0 auto;       /* コンテナ全体を中央に配置 */
+}
+
+.youtube-embed h3,
+.youtube-embed p {
+  margin: 0;
+}
+
+.video-container {
+  width: 100%;
+  max-width: 700px;    /* 動画の最大幅 */
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(233, 78, 78, 0.3);
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+
 .tutorial-steps {
   max-width: 800px;
   margin: 0 auto;
