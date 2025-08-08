@@ -645,11 +645,11 @@ footer {
 }
 
 .logo-button {
-  font-family: 'Inter', sans-serif; /* Serenityで使ってるフォント */
+  font-family: 'Inter', sans-serif;
   font-weight: 800;
   font-size: 26px;
   color: var(--text);
-  text-shadow: 0 0 12px rgba(233, 78, 78, 0.6);
+  text-shadow: 0 0 8px rgba(233, 78, 78, 0.4);
   text-decoration: none;
   cursor: pointer;
   user-select: none;
@@ -661,8 +661,7 @@ footer {
   -webkit-backdrop-filter: blur(6px);
   display: inline-block;
   position: relative;
-  /* 光らせる準備 */
-  box-shadow: 0 0 10px rgba(233, 78, 78, 0.4);
+  box-shadow: 0 0 6px rgba(233, 78, 78, 0.2);
 }
 
 .logo-button:hover,
@@ -670,8 +669,7 @@ footer {
   color: var(--primary);
   background: var(--panel);
   box-shadow:
-    0 0 20px var(--primary),
-    0 0 40px var(--primary),
-    0 0 60px var(--primary);
+    0 0 10px rgba(233, 78, 78, 0.3),
+    0 0 20px rgba(233, 78, 78, 0.2);
   outline: none;
 }
