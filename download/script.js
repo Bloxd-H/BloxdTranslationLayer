@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Smooth scrolling for nav-links
+    // Smooth scrolling
     document.querySelectorAll('a.nav-link[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -19,42 +19,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // FAQ Accordion logic (既存のまま保持)
-    document.querySelectorAll('.faq-item').forEach(item => {
+    // FAQ Accordion
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
         question.addEventListener('click', () => {
             const isActive = item.classList.contains('active');
-            document.querySelectorAll('.faq-item').forEach(i => {
-                i.classList.remove('active');
-            });
-            if (!isActive) item.classList.add('active');
+
+            // Close all other items
+            faqItems.forEach(i => i.classList.remove('active'));
+
+            // Toggle this item
+            if (!isActive) {
+                item.classList.add('active');
+            }
         });
     });
 
-    // Fade-in animation on scroll
+    // Fade-in animations on scroll
     const faders = document.querySelectorAll('.fade-in');
-    const options = {
+    const appearOptions = {
         threshold: 0.1,
-        rootMargin: '0px'
+        rootMargin: "0px 0px -100px 0px"
     };
-    const observer = new IntersectionObserver((entries, obs) => {
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (!entry.isIntersecting) return;
             entry.target.classList.add('visible');
-            obs.unobserve(entry.target);
+            observer.unobserve(entry.target);
         });
-    }, options);
+    }, appearOptions);
 
     faders.forEach(fader => {
-        observer.observe(fader);
-    });
-
-    // 初期表示で既に画面内にある要素にも .visible を追加
-    faders.forEach(fader => {
-        const rect = fader.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom >= 0) {
-            fader.classList.add('visible');
-            observer.unobserve(fader);
-        }
+        appearOnScroll.observe(fader);
     });
 });
