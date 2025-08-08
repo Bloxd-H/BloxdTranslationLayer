@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
 function copyCmd() {
   const textToCopy = `npm install
 node index.js`;
@@ -62,3 +63,17 @@ node index.js`;
     alert('Failed to copy commands.');
   });
 }
+const noticeBar = document.getElementById('noticeBar');
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 80) {
+    noticeBar.classList.add('hidden');
+    navbar.style.top = '0';
+  } else {
+    noticeBar.classList.remove('hidden');
+    navbar.style.top = noticeBar.offsetHeight + 'px';
+  }
+});
+
+navbar.style.top = noticeBar.offsetHeight + 'px';
