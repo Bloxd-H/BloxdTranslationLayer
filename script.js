@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Navbar scroll effect
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
@@ -9,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Smooth scrolling for nav-links
     document.querySelectorAll('a.nav-link[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -19,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // FAQ Accordion logic (既存のまま保持)
     document.querySelectorAll('.faq-item').forEach(item => {
         const question = item.querySelector('.faq-question');
         question.addEventListener('click', () => {
@@ -31,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Fade-in animation on scroll
     const faders = document.querySelectorAll('.fade-in');
     const options = {
         threshold: 0.1,
@@ -49,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(fader);
     });
 
-    // 初期表示で既に画面内にある要素にも .visible を追加
     faders.forEach(fader => {
         const rect = fader.getBoundingClientRect();
         if (rect.top < window.innerHeight && rect.bottom >= 0) {
