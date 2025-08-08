@@ -670,6 +670,7 @@ footer {
 *:focus {
   outline: none !important;
 }
+
 .background-gif {
   position: fixed;
   top: 0;
@@ -678,7 +679,8 @@ footer {
   height: 100vh;
   background: url('https://media.giphy.com/media/3o7TKMt1VVNkHV2PaE/giphy.gif') no-repeat center center / cover;
   z-index: -1;
-  filter: brightness(0.6);
-  pointer-events: none; /* 背景クリックできないように */
+  filter: brightness(0.6) blur(8px);
+  pointer-events: none;
+  transform: scale(1.05);
 }
 
