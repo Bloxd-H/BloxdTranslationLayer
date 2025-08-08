@@ -690,38 +690,40 @@ footer {
 
 .cmd-box {
   margin-top: 10px;
-  background-color: #2b0a0a;
-  border: 1px solid rgba(233, 78, 78, 0.6);
+  background-color: #000000;
+  border: 1px solid #444;
   border-radius: 8px;
-  padding: 12px 16px;
+  padding: 16px 20px;
   display: flex;
   align-items: center;
-  font-family: 'Courier New', Courier, monospace;
-  color: #ff6666;
-  box-shadow: 0 0 8px rgba(233, 78, 78, 0.7);
+  font-family: 'Consolas', 'Courier New', monospace;
+  color: #00ff00;
+  box-shadow: 0 0 12px #00ff00aa;
+  user-select: text;
 }
 
-.cmd-box code {
+.cmd-box pre {
+  margin: 0;
+  white-space: pre-wrap;
   flex-grow: 1;
-  user-select: text;
   font-size: 16px;
-  white-space: nowrap;
-  overflow-x: auto;
+  line-height: 1.4;
 }
 
 .btn-copy {
   margin-left: 16px;
-  background-color: var(--primary);
+  background-color: #00cc00;
   border: none;
-  color: white;
-  padding: 6px 14px;
+  color: black;
+  padding: 8px 18px;
   border-radius: 6px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: background-color 0.3s ease;
   user-select: none;
+  box-shadow: 0 0 6px #00cc00aa;
 }
 
 .btn-copy:hover {
-  background-color: var(--primary-dark);
+  background-color: #009900;
 }
