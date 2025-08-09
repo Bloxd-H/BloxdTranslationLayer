@@ -751,6 +751,10 @@ footer {
 }
 
 .cmd-green {
-  color: #00ff88;
+  color: #00ff00;
   font-weight: bold;
+}
+
+.cmd-path {
+  color: #ccc;
 }
