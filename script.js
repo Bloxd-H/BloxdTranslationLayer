@@ -55,9 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 const copyButton = document.getElementById('copyButton');
+const codeText = document.getElementById('codeText');
 
 copyButton.addEventListener('click', () => {
-  const textToCopy = "npm install node index.js";
+  const textToCopy = codeText.textContent;
   navigator.clipboard.writeText(textToCopy).then(() => {
     copyButton.textContent = "Copied!";
     setTimeout(() => {
