@@ -55,17 +55,23 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 const copyButton = document.getElementById('copyButton');
-const codeText = document.getElementById('codeText');
 
 copyButton.addEventListener('click', () => {
-  const textToCopy = codeText.textContent;
+  const textToCopy = `npm install
+node index.js`;
   navigator.clipboard.writeText(textToCopy).then(() => {
-    copyButton.textContent = "Copied!";
+    copyButton.textContent = 'Copied!';
     setTimeout(() => {
-      copyButton.textContent = copyButton.getAttribute('data-text');
+      copyButton.textContent = 'Copy';
+    }, 1500);
+  }).catch(() => {
+    copyButton.textContent = 'Failed to copy';
+    setTimeout(() => {
+      copyButton.textContent = 'Copy';
     }, 1500);
   });
 });
+
 
 const noticeBar = document.getElementById('noticeBar');
 const navbar = document.querySelector('.navbar');
