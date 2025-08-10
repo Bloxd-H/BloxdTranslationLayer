@@ -54,15 +54,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-function copyCmd() {
-  const textToCopy = `npm install
-node index.js`;
+const copyButton = document.getElementById('copyButton');
+
+copyButton.addEventListener('click', () => {
+  const textToCopy = "npm install
+      node index.js";
   navigator.clipboard.writeText(textToCopy).then(() => {
-    alert('Commands copied to clipboard!');
-  }).catch(() => {
-    alert('Failed to copy commands.');
+    copyButton.textContent = "Copied!";
+    setTimeout(() => {
+      copyButton.textContent = copyButton.getAttribute('data-text');
+    }, 1500);
   });
-}
+});
+
 const noticeBar = document.getElementById('noticeBar');
 const navbar = document.querySelector('.navbar');
 
