@@ -711,6 +711,7 @@ footer {
 }
 
 #copyButton {
+  margin-top: 30px;
   background: var(--panel);
   border: 1px solid var(--border);
   color: var(--text);
